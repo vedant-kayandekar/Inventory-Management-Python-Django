@@ -1,0 +1,80 @@
+{% extends 'partials/base.html' %}
+{% block title %}Satff Page{% endblock %}
+
+{% block result %}
+Satff Page
+{% endblock %}
+
+{% block content %}
+
+{% include 'partials/topnav.html' %}
+
+
+{% comment %} <!--Table-->
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            
+        </div>
+    </div>
+
+</div> {% endcomment %}
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    Profile Page
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <span class="h4">Staff Profile </span> 
+                            {% comment %} <a class="btn btn-info btn-sm float-right"
+                            href="{% url 'user-profile-update'%}">Edit</a>
+                            <hr> {% endcomment %}
+                            {% comment %} {% for worker in workers  %} {% endcomment %}
+                            <table class="table bg-white table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Name</th>
+                                        <td>{{staff_workers.username}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Email</th>
+                                        <td>{{staff_workers.email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Phone</th>
+                                        <td>{{staff_workers.profile.phone}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Address</th>
+                                        <td>{{staff_workers.profile.address}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                        <div class="col-md-4">
+                            <img class="img-thumbnail" src="{{ staff_workers.profile.image.url }}" alt="">
+                        </div>
+                        {% comment %} {% endfor %} {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!--End Table-->
+{% endblock %}
