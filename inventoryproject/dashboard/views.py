@@ -73,7 +73,7 @@ def product(request):
         if add_product_form.is_valid():
             product_name = add_product_form.cleaned_data.get('name')
             # Check if the product with the same name already exists
-            if not Product.objects.filter(name_iexact=product_name).exists():
+            if not Product.objects.filter(name__iexact=product_name).exists():
                 add_product_form.save()
                 messages.success(request, f'{product_name} has been added successfully')
             else:
@@ -155,6 +155,9 @@ def order(request):
     }
 
     return render(request, 'dashboard/order.html', context)
+
+
+
 
 @login_required(login_url='user-login')
 def staff_index(request):

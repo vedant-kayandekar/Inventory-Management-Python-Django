@@ -46,7 +46,7 @@
                             {% for order in orders  %}
                             {% if order.staff == user %}
                             <tr>
-                                <td>{{ order.product }}</td>
+                                <td>{{ order.product.name }}</td>
                                 <td>{{ order.product.category }}</td>
                                 <td>{{ order.order_quantity }}</td>
                                 <td>{{ order.date}}</td>
